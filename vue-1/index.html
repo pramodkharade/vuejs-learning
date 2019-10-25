@@ -13,6 +13,8 @@
       - <span v-on:mousemove.stop>DEAD Spot</span>
     </p>
     <input type="text" v-on:keyup.enter.space="alertMe">
+    <input type="text" v-model="name">
+    <h1>{{name}}</h1>
   </div>
 
   <script>
@@ -22,7 +24,8 @@
         message: 'Hello Vue!',
         x:0,
         y:0,
-        count:0
+        count:0,
+        name:'Pramod'
       },
       methods:{
         increaseCount: function(step){
