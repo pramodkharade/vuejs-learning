@@ -7,7 +7,7 @@
 <body>
   <div id="app">
     {{ message }}
-    <button v-on:click="increaseCount">Me</button>
+    <button v-on:click="increaseCount(2)">Me</button>
     <p>{{ count}}</p>
     <p v-on:mousemove="updatecoordinates"> Coordinates: {{ x }} X  {{y}}</p>
   </div>
@@ -22,8 +22,8 @@
         count:0
       },
       methods:{
-        increaseCount: function(){
-          this.count++;
+        increaseCount: function(step){
+          this.count += step;
         },
         updatecoordinates: function(event){
           this.x = event.clientX;
