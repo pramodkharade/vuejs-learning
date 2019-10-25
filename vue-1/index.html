@@ -9,7 +9,9 @@
     {{ message }}
     <button v-on:click="increaseCount(2)">Me</button>
     <p>{{ count}}</p>
-    <p v-on:mousemove="updatecoordinates"> Coordinates: {{ x }} X  {{y}}</p>
+    <p v-on:mousemove="updatecoordinates"> Coordinates: {{ x }} X  {{y}}
+      - <span v-on:mousemove="dummy">DEAD Spot</span>
+    </p>
   </div>
 
   <script>
@@ -28,6 +30,9 @@
         updatecoordinates: function(event){
           this.x = event.clientX;
           this.y = event.clientY;
+        },
+        dummy: function (event){
+          event.stopPropagation();
         }
       }
     })
