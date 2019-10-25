@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+    <button v-on:click="increaseCount">Me</button>
+    <p>{{ count}}</p>
+    <p v-on:mousemove="updatecoordinates"> Coordinates: {{ x }} X  {{y}}</p>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!',
+        x:0,
+        y:0,
+        count:0
+      },
+      methods:{
+        increaseCount: function(){
+          this.count++;
+        },
+        updatecoordinates: function(event){
+          this.x = event.clientX;
+          this.y = event.clientY;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
