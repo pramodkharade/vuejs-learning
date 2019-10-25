@@ -12,6 +12,7 @@
     <p v-on:mousemove="updatecoordinates"> Coordinates: {{ x }} X  {{y}}
       - <span v-on:mousemove.stop>DEAD Spot</span>
     </p>
+    <input type="text" v-on:keyup.enter.space="alertMe">
   </div>
 
   <script>
@@ -33,6 +34,9 @@
         },
         dummy: function (event){
           event.stopPropagation();
+        },
+        alertMe: function(){
+          alert('KeyEvent Modifiers');
         }
       }
     })
