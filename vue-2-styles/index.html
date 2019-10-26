@@ -33,6 +33,10 @@
       .text-color {
         color: yellow;
       }
+      .visible {
+  width: 100px;
+  height: 50px;
+}
   </style>
 </head>
 <body>
@@ -45,6 +49,12 @@
 
    <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
   <div v-bind:class="[float, 'blue', 'text-color']">I got no class :(</div>
+
+   <!-- 3) Let the user enter a class (create some example classes) and attach it -->
+  <div>
+    <input type="text" v-model="userClass">
+    <div v-bind:class="[{visible: true}, userClass]"></div>
+  </div>
   
 </div>
 <script type="text/javascript">
@@ -55,7 +65,8 @@
             highlight: false,
             shrink: true
           },
-          float:'float'
+          float:'float',
+          userClass:''
       },
       methods:{
         startEffect: function(){
