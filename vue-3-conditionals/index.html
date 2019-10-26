@@ -17,6 +17,14 @@
     <ul>
       <li v-for='(ingredient,index) in ingredients'>{{ingredient}} ({{index}})</li>
     </ul>
+    <hr>
+    <ul>
+      <li v-for='person in persons'>
+          <div v-for='(value,key,index) in person'>
+            {{key}} : {{value}} ({{index}})
+          </div>
+      </li>
+    </ul>
   </div>
 
   
@@ -26,7 +34,12 @@
       el:'#exercise',
       data:{
           show:true,
-          ingredients:['Milk','Cookies','Fruits']
+          ingredients:['Milk','Cookies','Fruits'],
+          persons:[
+              {name:'Pramod', age:32,color:'Green'},
+              {name:'Deepika', age:32,color:'Red'},
+              {name:'Dnyanda', age:2,color:'Gray'}
+          ],
       },
       methods:{
         
