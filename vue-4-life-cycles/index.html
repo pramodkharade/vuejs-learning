@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Life Cycle Hooks</title>
+  <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+
+  
+</head>
+<body>
+    <div id="exercise">
+      <h1>{{title}}</h1>
+      <button @click="title ='changed'">Update Title</button>
+      <button @click='destory'>Destory</button>
+</div>
+<script type="text/javascript">
+    new Vue({
+      el:'#exercise',
+      data:{
+        title: ' Vue Instance'
+      },
+      beforeCreate: function() {
+        console.log('beforecreate()');
+      },
+      create: function(){
+        console.log('create()');
+      },
+      beforeMount: function (){
+        console.log('beforeMount()');
+      },
+      mounted: function(){
+        console.log('mounted');
+      },
+      beforeUpdate : function(){
+        console.log('beforeupdate()')
+      },
+      updated : function() {
+        console.log('updated');
+      },
+      beforeDestory : function(){
+        console.log('beforeDestory()');
+      },
+      destory : function (){
+        console.log('destory');
+      },
+      methods: {
+        destory :function(){
+          this.$destory;
+          console.log('destory object');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
